@@ -58,14 +58,13 @@ function gotData() {
 
   //trim off white space
   let str = currentString.trim();
-  console.log(str);
 
   // if this is the first byte received, and it's an A, clear the serial
   // buffer and note that you've had first contact from the microcontroller.
   // Otherwise, add the incoming byte to the array:
   if (firstContact == false) {
     if (str == "A") {
-      console.log(currentString);
+      //console.log(currentString);
       serial.clear(); // clear the serial port buffer
       firstContact = true; // you've had first contact from the microcontroller
       serial.write("A"); // ask for more
@@ -80,11 +79,11 @@ function gotData() {
       //lets see our data
       console.log(dataIn);
 
-      hue = map(dataIn[1], 600, 1000, 0, 100);
+      hue = map(dataIn[1], 600, 1000, 0, 360);
 
       //listen for button to be pressed
       //test whether we've waited long enough
-      console.log(cities.length - 1);
+      //console.log(cities.length - 1);
       if (dataIn[0] == 1 && millis() - time > wait) {
 
         //go to the next city

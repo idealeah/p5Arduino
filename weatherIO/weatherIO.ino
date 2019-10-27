@@ -1,6 +1,6 @@
-int buttonPin = 8;
+int buttonPin = 7;
+int ledPin = 6;
 int sensorPin = A0;
-int ledPin = 2;
 int inByte = 0;         // incoming serial byte    
 
 void setup() {
