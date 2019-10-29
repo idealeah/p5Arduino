@@ -1,6 +1,6 @@
 let serial;
 let string;
-let cities = ["London", "Nairobi", "Minneapolis", " Tokyo", "New York"];
+let cities = ["Edmonton", "Nairobi", "Havana", "Tokyo", "New York"];
 let buttonIsPressed = false;
 let locationState = 0;
 let dataIn = [];
@@ -83,7 +83,6 @@ function gotData() {
 
       //listen for button to be pressed
       //test whether we've waited long enough
-      //console.log(cities.length - 1);
       if (dataIn[0] == 1 && millis() - time > wait) {
 
         //go to the next city

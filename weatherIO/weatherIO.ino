@@ -22,7 +22,7 @@ void loop() {
     inByte = Serial.read();
   }
 
-  digitalWrite(ledPin, inByte);
+  analogWrite(ledPin, inByte);
   
    // read the input on analog pin 0:
    int buttonValue = digitalRead(buttonPin);

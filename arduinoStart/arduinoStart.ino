@@ -9,8 +9,17 @@ void setup() {
 }
 
 void loop() {
-  for (int inByte = 0; inByte < 256; inByte++) {
-    Serial.write(inByte);
-    analogWrite(ledPin, inByte);
-  }
+
+  int buttonState = digitalRead(buttonPin);
+  int sensorState = analogRead(sensorPin);
+  Serial.print(sensorState);
+  Serial.print("\t");
+  Serial.print(buttonState);
+  Serial.print("\t");
+
+  int ledValue = map(sensorState, 700, 1000, 0, 255);
+  Serial.print(ledValue);
+  Serial.print("\n");
+  analogWrite(ledPin, ledValue);
+  
 }

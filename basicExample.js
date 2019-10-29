@@ -57,7 +57,7 @@ function gotError(theerror) {
 
 // There is data available to work with from the serial port
 function gotData() {
-  let currentString = serial.readStringUntil("\r\n");
+  let currentString = serial.readStringUntil("\n");
   console.log(currentString);
   string = currentString;
 }
